@@ -37,6 +37,17 @@ public class Main {
             case "1": {
                 System.out.println("How many employees do you want to pay salary for?");
                 int nrOfEmployees = (int)inputNumber();
+                double[] employeeArray = new double[nrOfEmployees];
+                System.out.println("Enter salary for every employee.");
+                for (int i = 0; i < employeeArray.length; i++) {
+                    System.out.print("Employee " + (i+1) + ": ");
+                    employeeArray[i] = inputNumber();
+                }
+                System.out.println("\nSALAIES");
+                for (int i = 0; i < employeeArray.length; i++) {
+                    System.out.println("Employee " + (i+1) + " salary is " + (employeeArray[i] * 0.7) +
+                                       " kr after 30% tax.");
+                }
                 break;
             }
             case "2": {
