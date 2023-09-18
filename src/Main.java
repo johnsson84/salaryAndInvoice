@@ -25,6 +25,9 @@ public class Main {
         return value;
     }
     public static void main(String[] args) {
+
+        double account = 25000;
+
         Scanner input = new Scanner(System.in);
         System.out.println("\nSALARY AND INVOICE PROGRAM");
         System.out.println("\n1. Pay salary to employees" +
@@ -51,6 +54,14 @@ public class Main {
                 break;
             }
             case "2": {
+                System.out.print("Enter the amount of the invoice: ");
+                double invoice = inputNumber();
+                double vat = (invoice * 0.25);
+                account += invoice;
+                System.out.println("Gross amount: " + invoice + " kr.");
+                System.out.println("VAT: " + vat + " kr.");
+                System.out.println("Net sum: " + (invoice - vat) + " kr.");
+                System.out.println("Current sum on bank account: " + account + " kr.");
                 break;
             }
             case "3": {
