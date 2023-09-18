@@ -65,6 +65,25 @@ public class Main {
                 break;
             }
             case "3": {
+                System.out.print("Enter numbers of invoices to pay: ");
+                int invoiceNr = (int)inputNumber();
+                double[] invoiceArray = new double[invoiceNr];
+                double invoiceTotal = 0;
+                for (int i = 0; i < invoiceArray.length; i++) {
+                    System.out.print("Enter the amount for invoice " + (i+1) + ": ");
+                    invoiceArray[i] = inputNumber();
+                    invoiceTotal += invoiceArray[i];
+
+                }
+                System.out.println("Total sum of invoices: " + invoiceTotal + " kr.");
+                if (invoiceTotal > account) {
+                    System.out.println("Sorry, you don't have enough money to pay. You are "
+                            + (account - invoiceTotal) + " kr short.");
+                }
+                else {
+                    System.out.println("You have " + (account - invoiceTotal) + " kr left on account after the " +
+                            "invoices are payed.");
+                }
                 break;
             }
             default:
